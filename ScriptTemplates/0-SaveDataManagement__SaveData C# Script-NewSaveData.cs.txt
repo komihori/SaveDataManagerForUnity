@@ -1,0 +1,30 @@
+using SaveDataManagement;
+using SaveDataManagement.Encrypting;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
+[System.Serializable]
+public class #SCRIPTNAME# {
+    // セーブデータの内容
+    public string value = "none";
+}
+
+public class #SCRIPTNAME#KeySettings : IAesKeySettings {
+    // AES鍵（keyを設定してください）
+    public int GetAesKeySize() => 128;
+    public int GetAesBlockSize() => 128;
+    public string GetAesIv() => "2CZ6QruSCQ7z4jhR89W64A==";
+    public string GetAesKey() => "KvAXL/3G2FGPRPaL/Qlh0w==";
+}
+
+public class #SCRIPTNAME#IO : SaveDataIO<#SCRIPTNAME#, #SCRIPTNAME#KeySettings> { }
+
+#if UNITY_EDITOR
+public class #SCRIPTNAME#Editor : SaveDataEditorWindow<#SCRIPTNAME#IO, #SCRIPTNAME#, #SCRIPTNAME#KeySettings> {
+    [MenuItem("SaveDataManagement/#SCRIPTNAME#Editor")]
+    static void ShowWindow() {
+        EditorWindow.GetWindow<#SCRIPTNAME#Editor>();
+    }
+}
+#endif
