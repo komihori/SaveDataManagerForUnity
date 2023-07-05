@@ -14,8 +14,8 @@ public class #SCRIPTNAME#KeySettings : IAesKeySettings {
     // AES鍵（keyを設定してください）
     public int GetAesKeySize() => 128;
     public int GetAesBlockSize() => 128;
-    public string GetAesIv() => "2CZ6QruSCQ7z4jhR89W64A==";
-    public string GetAesKey() => "KvAXL/3G2FGPRPaL/Qlh0w==";
+    public string GetAesIv() => "DEVAx6y3%KvQ$sOG";
+    public string GetAesKey() => "B!vFkaj0DuK$Kgwa";
 }
 
 public class #SCRIPTNAME#IO : SaveDataIO<#SCRIPTNAME#, #SCRIPTNAME#KeySettings> { }
